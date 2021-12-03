@@ -45,6 +45,7 @@
   * [Multi-Messenger Analysis](#multi-messenger-analysis)
   * [Population Synthesis](#population-synthesis)
   * [Neutron Stars Equations of State](#Neutron-Stars-Equations-of-State)
+  * [Pulsar Timing Array](#Pulsar-Timing-array)
 - [Related List of Tools](#related-list-of-tools)
   * [Neutrino Code](#neutrino-code)
 
