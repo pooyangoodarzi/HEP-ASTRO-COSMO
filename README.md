@@ -2,8 +2,6 @@
 
 **This is a community effort to collect all HEP/ASTRO/COSMO open source packages/libraries/tools in one place. Everyone welcome to contribute!** :shipit:
 
-*Original idea: [Twitter discussuion can be found here](https://twitter.com/malcfairbairn/status/1369178173884235776?s=20). First resource made by [Suchita Kulkarni](https://twitter.com/suchi_kulkarni), [this Gdoc](https://docs.google.com/document/d/1yDp4EfxR5ivlDhice2iQ3jeOJNN0GRKH_-ln5y3R7UY/edit).*
-
 **Package/library/tool descriptions copied from respective pages.**
 
 
@@ -29,7 +27,7 @@
   * [Einstein-Boltzmann Numerical Solvers](#einstein-boltzmann-numerical-solvers)
   * [Cosmological Parameter Estimation](#cosmological-parameter-estimation-and-statistical-analysis)
   * [Correlation Function Estimation](#correlation-function-estimation)
-  * [N-Body Simulations](#n-body-simulations)
+  * [Simulations](#simulations)
   * [Extended Cosmologies](#extended-cosmologies)
   * [Perturbation Theory](#perturbation-theory)
 - [ASTRO](#astro)
@@ -687,7 +685,7 @@ https://github.com/oliverphilcox/encore
 
 
 
-## N-body Simulations
+## Simulations
 
 ### Quijote Simulations
 
@@ -746,6 +744,33 @@ CDM & Baryons, CDM & neutrinos and CDM Baryons & neutrinos.
 
 [N-GenIC GH Repository](https://github.com/franciscovillaescusa/N-GenIC_growth)
 
+### monofonIC
+
+High order LPT/PPT cosmological IC generator for single resolution cosmological simulations.
+
+BEWARE: This software package is currently in a beta testing phase! Proceed with caution before using it for large-scale simulations.
+
+The project is currently still under active development, so check the documentation on which features are currently implemented and how new modules/plugins can be added.
+
+[Repository](https://bitbucket.org/ohahn/monofonic/src/master/)
+
+### CosMomentum
+
+As of now, this code can compute
+* the probability distribution function (PDF) of the matter density field,
+* the cumulant generating function (CGF) of the matter density field,
+* individual cumulants of the matter density field.
+It does this for
+* Gaussian and 3 types of non-Gaussian initial conditions.
+* both line-of-sight projections of the matter density field as well as the 3D density field
+* all of this for PDFs of lensing convergence
+* statistics of biased & stochastic tracers (e.g. galaxies)
+
+Cite as Friedrich et al. ([2019, arXiv:1912.06621](https://arxiv.org/abs/1912.06621)) if you use this code.
+[Repository](https://github.com/OliverFHD/CosMomentum)
+
+
+
 ### Pylians
 
 Pylians stands for Python libraries for the analysis of numerical simulations. They are a set of python libraries, written in python, cython and C, whose purposes is to facilitate the analysis of numerical simulations (both N-body and hydro). Among other things, they can be used to:
@@ -790,6 +815,200 @@ Pylians were the native or inhabitant of the Homeric town of Pylos
 
 [PYlians3 GH Repository](https://github.com/franciscovillaescusa/Pylians3)
 
+
+### Abacus Cosmos
+
+N-body simulation data products from the 2017 Abacus Cosmos project, including halos catalogs, particle subsamples, power spectra, and initial conditions.
+
+[Abacus Cosmos Website](https://lgarrison.github.io/AbacusCosmos/)
+
+[Abacus Cosmos Paper](https://lgarrison.github.io/AbacusCosmos/papers/)
+
+
+### Abacus Summit
+
+AbacusSummit is a suite of large, high-accuracy cosmological N-body simulations. These simulations were designed to meet (and exceed!) the Cosmological Simulation Requirements of the Dark Energy Spectroscopic Instrument (DESI) survey. AbacusSummit was run on the Summit supercomputer at the Oak Ridge Leadership Computing Facility under a time allocation from the DOE’s ALCC program.
+
+[Abacus Summit ReadtheDocs](https://abacussummit.readthedocs.io/en/latest/)
+
+[Abacus Summit GH Repository](https://github.com/abacusorg/AbacusSummit)
+
+[Papers and Citation](https://abacussummit.readthedocs.io/en/latest/citation.html)
+
+
+### abacusutils
+
+abacusutils is a package for reading and manipulating data products from the Abacus N-body project. In particular, these utilities are intended for use with the AbacusSummit suite of simulations. We provide multiple interfaces: primarily Python 3, but also C/C++ [coming soon!] and language-agnostic interfaces like Unix pipes.
+
+[abacusutils GH repository](https://github.com/abacusorg/abacusutils)
+
+[abacusutils ReadtheDocs](https://abacusutils.readthedocs.io/en/latest/)
+
+
+### zeldovich-PLT
+
+This code generates Zel'dovich approximation (ZA) initial conditions (i.e. first-order Lagrangian perturbation theory) for cosmological N-body simulations, optionally applying particle linear theory (PLT) corrections. This code does not provide second-order ICs (2LPT), but one can use these ICs with the config-space 2LPT detailed in Garrison et al. (2016). This is the primary IC generator used by the Abacus N-body code.
+
+If you do not intend to use the config-space 2LPT, then it's better to use a Fourier-space 2LPT code (e.g. 2LPTic) than to rely on ZA, even with PLT corrections.
+
+[zeldovich-PLT GH Repository](https://github.com/abacusorg/zeldovich-PLT)
+
+[Citation](https://github.com/abacusorg/zeldovich-PLT#citation)
+
+
+### 2LPTic 
+
+
+2LPT initial conditions parallel and serial code. The MPI-parallel version of 2LPTic is based on the Zel'dovich n-genic code written by Volker Springel.
+
+The serial code is written in Fortran77 and requires the installation of FFTW version 2.1.5. You can read Appendix D2 in this paper to understand how the code works. 
+
+[2LPTic Website](https://cosmo.nyu.edu/roman/2LPT/)
+
+
+### Aemulus Project
+
+* All simulations: 1050 Mpc/h, 14003 particles, resolving halos down to ~6x1012 Msol/h
+* 40 Training Simulations, all different cosmologies and independent phases
+* 7x5=35 Test Sample Simulations: 7 cosmologies, with 5 realizations per cosmology
+* Additional “convergence” simulations testing box size, particle resolution, etc.
+
+[Aemulus Website](https://aemulusproject.github.io/index.html)
+
+[Aemulus Papers](https://aemulusproject.github.io/papers.html)
+
+
+### BAHAMAS Project
+
+BAHAMAS is a first attempt to do large-scale structure (LSS) cosmology using self-consistent full cosmological hydrodynamical simulations. Such simulations simultaneously follow all of the important matter components and allow us to accurately address the main uncertainty in the theoretical modelling of LSS, which is astrophysical effects (such as feedback) associated with the baryonic component.
+
+A lay person's description of the project can be found in an [article](https://www.ljmu.ac.uk/about-us/news/articles/2017/12/6/funding-to-uncover-dark-side-of-the-universe) put together by LJMU's media team.
+
+The initial BAHAMAS paper, which describes in detail our feedback modelling strategy, is McCarthy et al. (2017).
+
+With a viable model for astrophysical effects, we are now gearing up to explore variations in cosmology. Both in the context of the standard model (LCDM), but also plausible extensions of LCDM, including massive neutrino cosmologies, time-variable dark energy models, and modified gravity models.
+
+Recently, we posted our initial results on constraints on the summed mass of neutrinos in McCarthy et al. (2018). A popular science article about our results can be found in The Conversation.
+
+[BAHAMAS Project Webpage](https://www.astro.ljmu.ac.uk/~igm/BAHAMAS/)
+
+[BAHAMAS Paper 1](https://ui.adsabs.harvard.edu/abs/2017MNRAS.465.2936M/abstract)
+
+[BAHAMAS Paper 2](https://ui.adsabs.harvard.edu/abs/2018MNRAS.476.2999M/abstract)
+
+
+### CosmoSim
+
+The CosmoSim database provides results from cosmological simulations performed within different projects: MultiDark and Bolshoi, CLUES, and Galaxies.
+
+[CosmoSim database](https://www.cosmosim.org)
+
+[MultiDark and Bolshoi Project](https://www.cosmosim.org/cms/documentation/projects/multidark-bolshoi-project/)
+
+[CLUES Project](https://www.cosmosim.org/cms/documentation/projects/clues-project/)
+
+[Galaxies](https://www.cosmosim.org/cms/documentation/projects/galaxies/)
+
+
+### Massive Galaxy Project
+
+The Massive Galaxy Project is a multi-pronged effort to characterize and understand the physical processes that drive the evolution of the most massive galaxies in the universe.
+ 
+Our goals are to answer questions such as, are massive galaxies fundamentally multi-component systems and when did their components assemble?  What is their growth rate over cosmic time?  How do they reflect and influence their environment?
+ 
+To tackle this broad range of questions, we make use of a variety of data sets from COSMOS, BOSS, the Stripe 82 co-adds, and IFU observations from the MaNGA survey.
+ 
+The Massive Galaxy Project includes the following results and data-products:
+ 
+* The Stripe 82 Massive Galaxy Catalog (S82-MGC), including a mass limited sample of 41,770 galaxies with log Mstar/Msun>11.2 to z=0.7
+* Stellar mass completeness estimates for the BOSS CMASS and LOWZ samples
+* Mock catalogs for the BOSS survey which reproduce the two-point correlation function and which account for the stellar mass completeness of the BOSS survey.
+
+[The Massive Galaxy Project Website](https://www.ucolick.org/~kbundy/massivegalaxies/index.html)
+
+[Publications](https://www.ucolick.org/~kbundy/massivegalaxies/publications.html)
+
+
+### CurieHZ 
+
+Large Scale simulations of Ly-α  and Ly-break galaxies in the high-z universe: Probing the epoch of reionization.
+
+The  main goal of this project was to  generate a mass limited complete volume sample of resimulated objects at high-z (from z≈ 3 to 6).  To this end, we have simulated a cubic box  200 h-1 Mpc with different resolutions and physics, ranging from 5123 to 20483 particles.   These simulations of the whole box have been used to identify the objects of interest  in order to generate the  initial conditions for the resimulations.  We made use of a new Initial Conditions Generation code called GINNUNGAGAP  written by Steffen Knollmann at UAM.  This code has some new features such as  variable domain decompositions (slab or pencil) for the Fast Fourier Transform in 3D,  fully parallel random number generator and  the realizations of  random gaussian fluctuations in real space, rather than in Fourier space.  Increasing levels of mass refinements  can easily be  generated in this way to almost unlimited number, provided that there are sufficiente computational MPI nodes.   Thanks to the pencil domain decomposition, there is no limitation in the mesh sizes used to compute the density fields and to FFT them.
+
+[CurieHZ Project Website](https://curiehz.ft.uam.es)
+
+
+### EAGLE 
+
+EAGLE (Evolution and Assembly of GaLaxies and their Environments) is a simulation aimed at understanding how galaxies form and evolve.  This computer calculation models the formation of structures in a cosmological volume, 100 Megaparsecs on a side (over 300 million light-years). This is large enough to contain 10,000 galaxies of the size of the Milky Way or bigger, enabling a comparison with the whole zoo of galaxies visible in the Hubble Deep field for example.
+
+[EAGLE Webpage](http://icc.dur.ac.uk/Eagle/index.php)
+
+[Publications](http://icc.dur.ac.uk/Eagle/publications.php)
+
+### Aquarius
+
+The Aquarius Project is a large-scale collaborative programme of the Virgo Consortium, similar in scope and scale to the Millennium Simulation project. At present, the principal set of Aquarius simulations contains six examples of an isolated halo similar in mass to that of the Milky Way. These are simulated in their full cosmological context (assuming the concordance LCDM cosmology) and at various resolutions up to about 200 million particles (counted within the radius where the enclosed density is 200 times the cosmic mean). One halo is also simulated at even higher resolution, resulting in almost 1.5 billion particles within this radius. These simulations are being used to understand the fine-scale structure predicted around the Milky Way by the standard structure formation model, and as the basis for simulation by various techniques of the growth of the stellar components of our Galaxy.
+
+[Aquarius Project Website](https://wwwmpa.mpa-garching.mpg.de/aquarius/)
+
+### Auriga
+
+
+The Auriga Project is a large suite of high-resolution magneto-hydrodynamical simulations of Milky Way-sized galaxies, simulated in a fully cosmological environment by means of the 'zoom-in' technique. It is simulated with the state-of-the-art hydrodynamic moving mesh code AREPO, and includes a comprehensive galaxy formation model based on the successful cosmological simulation Illustris.
+
+[Auriga Website](https://wwwmpa.mpa-garching.mpg.de/auriga/)
+
+[Auriga Papers](https://wwwmpa.mpa-garching.mpg.de/auriga/publications.html)
+
+
+### Illustris
+
+The Illustris project is a large cosmological simulation of galaxy formation, completed in late 2013, using a state of the art numerical code and a comprehensive physical model. Building on several years of effort by members of the collaboration, the Illustris simulation represents an unprecedented combination of high resolution, total volume, and physical fidelity. 
+
+[Illustris Website](https://www.illustris-project.org)
+
+[Illustris Papers](https://www.illustris-project.org/results/)
+
+### IllustrisTNG
+
+The IllustrisTNG project is an ongoing series of large, cosmological magnetohydrodynamical simulations of galaxy formation. TNG aims to illuminate the physical processes that drive galaxy formation: to understand when and how galaxies evolve into the structures that are observed in the night sky, and to make predictions for current and future observational programs. The simulations use a state of the art numerical code which includes a comprehensive physical model and runs on some of the largest supercomputers in the world. TNG is a successor to the original Illustris simulation and builds on several years of effort by many people.
+
+[IllustrisTNG Website](https://www.tng-project.org)
+
+[TNG Papers](https://www.tng-project.org/results/)
+
+### CosmoDC2
+
+CosmoDC2 is a large synthetic galaxy catalog designed to support precision dark energy science with LSST, covering 440 sq. deg. of sky area to a redshift of z = 3, with a magnitude depth of 28 in the r band. A wide range of galaxy properties are available in cosmoDC2. To learn more about cosmoDC2, please see Korytov et al. (LSST DESC), ApJS, 245, 26 (2019).
+
+[CosmoDC2 Website](https://data.lsstdesc.org/doc/cosmodc2)
+
+### DC2 Simulated Sky Survey
+
+The DC2 Simulated Sky Survey is a 300-sq-deq simulated survey in six optical bands with observations following a reference LSST observing cadence.
+
+[DC2 SSS Website](https://data.lsstdesc.org/doc/dc2_sim_sky_survey)
+
+### Magneticum simulations
+
+The Magneticum simulations are aiming to follow the formation of cosmological structures over a large range of cosmological scales by performing a set of hydrodynamical simulations of different cosmological volumes, each of them sampled with a very large number of particles providing excellent spacial resolution of the different simulations. We take many physical processes into account to allow detailed comparisons to a variety of multi-wavelength observational data. See Simulations for a detailed description for astrophysicists.
+
+[Magenticum Website](http://www.magneticum.org/index.html)
+
+[Magneticum Publications](http://www.magneticum.org/publications.html)
+
+### MICE
+
+It includes extensive galaxy and lensing properties for ~200 million galaxies over 5000 sq.deg and up to a redshift z=1.4
+This galaxy mock is built from the parent MICE-Grand Challenge (MICE-GC) lightcone N-body simulation and associated halo catalog, 
+that is throughly validated in a series of forthcoming papers: Fosalba et al. 2013a,b, Crocce et al. 2013 
+Further details about the galaxy mock method implemented will be given in Castander et al. 2014, Carretero et al. 2014.
+
+
+[MICE Website](http://maia.ice.cat/mice/)
+
+
 ***
 
 ## Extended Cosmologies
@@ -799,6 +1018,23 @@ Pylians were the native or inhabitant of the Homeric town of Pylos
 ReACT is an extension of the software package Copter (0905:0479) and MG-Copter (1606.02520) which allows for the calculation of redshift and real space large scale structure observables for a wide class of gravity and dark energy models.
 
 [ReACT GH Repository](https://github.com/nebblu/ReACT)
+
+### pyLDT-cosmo
+
+A Python package to generate matter PDF predictions in Large Deviation Theory for ΛCDM and alternative cosmologies.
+Currently available cosmological models include:
+* ΛCDM
+* Hu-Sawicki f(R) gravity with ΛCDM background (0705.1158)
+* nDGP gravity with ΛCDM background (0910.0235)
+* w0waCDM (0009008, 0208512, 0808.3125)
+
+pyLDT-cosmo is partly based on the Julia programming language, which uses a Just-In-Time (JIT) compiler to improve runtime performance. However, this feature comes at the expense of slow library loading when compared to pure or pre-compiled Python packages. On a modern computer pyLDT-cosmo takes about 80 seconds to load. After that computation is very efficient, taking only ~3 seconds to derive the matter PDF's simultaneuosly for all models, redshifts and smoothing radii.
+
+[GH Repository](https://github.com/mcataneo/pyLDT-cosmo)
+
+[Jupyter Notebook](https://github.com/mcataneo/pyLDT-cosmo/tree/main)
+
+[Citation](https://github.com/mcataneo/pyLDT-cosmo#citation)
 
 ***
 
